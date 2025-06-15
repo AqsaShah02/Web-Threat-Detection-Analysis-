@@ -1,144 +1,80 @@
-# 🛡️ Cyber Threat Analysis & Detection
+# Cybersecurity: Suspicious Web Threat Interactions 
 
-This project is a comprehensive cyber threat analysis pipeline. It analyzes network traffic data, applies machine learning models for anomaly and attack detection, and visualizes cyber threat patterns. The goal is to simulate a security monitoring scenario — like one for a university — using real or realistic data.
+## Project Overview
+This project focuses on detecting and analyzing suspicious web traffic patterns to identify potential cybersecurity threats. Using machine learning techniques, we analyze AWS CloudWatch web traffic data to classify normal vs. suspicious activities and visualize threat patterns.
 
----
-
-## 📌 Objectives
-
-- Analyze cloud-based network traffic logs.
-- Detect malicious activity using ML models.
-- Visualize cyber threats and attack patterns.
-- Interpret results with a focus on network intrusion analysis.
-- Package results into a reproducible format with trained models.
-
----
-
-## 🧰 Technologies & Tools
-
-- **Platform:** Google Colab
-- **Language:** Python
-- **Libraries:**  
-  - pandas  
-  - matplotlib / seaborn  
-  - scikit-learn  
-  - tensorflow / keras  
-  - numpy  
-
----
-
-## 📂 Project Structure
-
+## Project Structure
+```
+UML_CYBER_THREAT_ANALYSIS/
+├── data/
+│   └── CloudWatch_Traffic_Web_Attack.csv       # Raw dataset
+├── images/                                     # Visualization exports
+│   ├── 1.jpg                                  # EDA visualizations
+│   ├── 2.jpg                                  # Model performance charts
+│   ├── 3.jpg                                  # Network graphs
+│   ├── 4.jpg                                  # Correlation matrices
+│   ├── 5.jpg                                  # Traffic over time
+│   └── 6.jpg                                  # Anomaly detection results
+├── model/
+│   ├── network_intrusion_model.h5             # Neural network model
+│   ├── neural_network_model.h5                # Alternative NN model
+│   └── random_forest_model.pkl                # Random Forest model
+├── results/
+│   └── analyzed_data.csv                      # Processed/analyzed data
+├── requirements.txt                           # Python dependencies
+└── UML_Cyber_Threat_Analysis.ipynb           # Main Jupyter notebook
 ```
 
-UM\_Cyber\_Threat\_Analysis/
-├── data/
-│   └── CloudWatch\_Traffic\_Web\_Attacks.csv
-├── images/
-│   ├── 1.jpg
-│   ├── 2.jpg
-│   └── ... (threat visualizations)
-├── model/
-│   ├── network\_intrusion\_model.h5
-│   ├── neural\_network\_model.h5
-│   └── random\_forest\_model.pkl
-├── results/
-│   └── analyzed\_data.csv
-├── requirements.txt
-└── UM\_Cyber\_Threat\_Analysis\_.ipynb
+## Key Features
+- **Data Analysis**: Exploratory analysis of web traffic patterns
+- **Anomaly Detection**: Identification of suspicious activities using Isolation Forest
+- **Machine Learning Models**:
+  - Random Forest Classifier
+  - Neural Networks (including CNN architecture)
+- **Visualizations**:
+  - Network interaction graphs
+  - Traffic pattern heatmaps
+  - Time-series analysis
+  - Country-based threat distribution
 
-````
-
----
-
-## 🚀 How to Run This Project
-
-### 🔗 Option 1: Google Colab (Recommended)
-1. Open the notebook directly in Colab:  
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
-
-2. Upload all folders (`data`, `images`, `model`, `results`) via Colab’s file manager.
-3. Run all cells step-by-step.
-
-
-
-### 💻 Option 2: Run Locally
-
-1. Clone the repository:
+## Installation
+1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/UM_Cyber_Threat_Analysis.git
-   cd UM_Cyber_Threat_Analysis
-````
-
-2. Install dependencies:
-
+   git clone https://github.com/yourusername/cybersecurity-web-threat-detection.git
+   ```
+2. Install requirements:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Launch the notebook:
+## Usage
+1. Run the Jupyter notebook `UML_Cyber_Threat_Analysis.ipynb`
+2. The notebook includes:
+   - Data loading and preprocessing
+   - Exploratory data analysis
+   - Feature engineering
+   - Model training and evaluation
+   - Visualization generation
 
-   ```bash
-   jupyter notebook UM_Cyber_Threat_Analysis_.ipynb
-   ```
+## Results
+Our models achieved 100% accuracy in classifying suspicious web traffic (note: this may indicate data leakage in the sample dataset - further validation needed with larger, more diverse datasets).
 
----
+Key findings:
+- High bytes_in with low bytes_out often indicates infiltration attempts
+- Specific country codes showed higher frequency of suspicious activities
+- Non-standard ports were frequently associated with unauthorized access attempts
 
-## 🧠 Models Used
-
-| Model                | File Name                    | Type                       |
-| -------------------- | ---------------------------- | -------------------------- |
-| Neural Network       | `neural_network_model.h5`    | Deep Learning (Keras)      |
-| Network Intrusion NN | `network_intrusion_model.h5` | Custom Intrusion Detection |
-| Random Forest        | `random_forest_model.pkl`    | Scikit-learn ML            |
-
-These models are pre-trained and used for classifying and detecting threats in network traffic data.
-
----
-
-## 📊 Visual Results
-
-Example visualizations are available in the `images/` folder:
-
-![WhatsApp Image 2025-06-15 at 13 58 44_64bfb651](https://github.com/user-attachments/assets/dee6d27a-98c4-49a7-8c03-39f45266a0f0)
+## Visualizations
+![6](https://github.com/user-attachments/assets/a8df3d29-ec70-46bb-b199-f80fcc2939e1)
+![5](https://github.com/user-attachments/assets/2b458afe-7762-48cf-86cb-d846721d0a5c)
+![4](https://github.com/user-attachments/assets/2cdbe2ff-b5e0-49ec-adf2-7f0742f4d59a)
+![3](https://github.com/user-attachments/assets/79b748db-6250-4e64-9a2f-1a0e0ab2f319)
+![2](https://github.com/user-attachments/assets/6246115e-5013-426e-ba91-4b38b02f61f9)
+![1](https://github.com/user-attachments/assets/a066e54f-45d5-4f45-aa18-e9f72e200de8)
 
 
-You can view them by opening the notebook and exploring the "Images" section.
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your improvements.
 
----
-
-## ✅ Results
-
-The `results/analyzed_data.csv` file contains:
-
-* Detected anomalies
-* Probabilities or prediction results
-* Feature-engineered outputs
-
----
-
-## 📦 Dependencies
-
-All dependencies are listed in `requirements.txt`. If you used Colab, most will already be pre-installed.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork the repo, create a branch, and open a pull request.
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-* Google Colab for cloud-based computing
-* University of Michigan (for scenario inspiration)
-* Open-source Python and ML libraries
-* CloudWatch (as a reference for sample data schema)
-
+## License
+This project is licensed under the MIT License.
