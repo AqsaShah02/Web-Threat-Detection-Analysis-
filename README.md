@@ -60,7 +60,7 @@ UM\_Cyber\_Threat\_Analysis/
 2. Upload all folders (`data`, `images`, `model`, `results`) via Colab’s file manager.
 3. Run all cells step-by-step.
 
----
+
 
 ### 💻 Option 2: Run Locally
 
